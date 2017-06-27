@@ -1,0 +1,14 @@
+#!/bin/sh
+
+addgroup -g ${GID} lstu && adduser -H -s /bin/sh -D -G lstu -u ${UID} lstu
+
+mkdir -p /usr/lstu/data
+chown -R lstu:lstu /usr/lstu
+
+sed -i -e 's|<secret>|'${SECRET}'|' \
+        -e 's|<contact>|'${CONTACT}'|' \
+        -e 's|<adminpwd>|'${ADMINPWD}'|' \
+        -e 's|<webroot>|'${WEBROOT}'|' /usr/lstu/lstu.conf
+
+cd /usr/lstu
+exec su-exec lstu:lstu /sbin/tini -- /usr/local/bin/carton exec hypnotoad -f /usr/lstu/script/lstu
