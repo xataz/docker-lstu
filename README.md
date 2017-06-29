@@ -1,5 +1,9 @@
 ![](https://git.framasoft.org/uploads/project/avatar/5/lstu.png)
 
+[![Build Status](https://drone.xataz.net/api/badges/xataz/docker-lstu/status.svg)](https://drone.xataz.net/xataz/docker-lstu)
+[![](https://images.microbadger.com/badges/image/xataz/lstu.svg)](https://microbadger.com/images/xataz/lstu "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/xataz/lstu.svg)](https://microbadger.com/images/xataz/lstu "Get your own version badge on microbadger.com")
+
 > This image is build and push with [drone.io](https://github.com/drone/drone), a circle-ci like self-hosted.
 > If you don't trust, you can build yourself.
 
