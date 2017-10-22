@@ -10,7 +10,7 @@ ENV GID=991 \
 LABEL description="lstu based on alpine" \
       tags="latest" \
       maintainer="xataz <https://github.com/xataz>" \
-      build_ver="2017100501"
+      build_ver="2017102201"
 
 RUN BUILD_DEPS="build-base \
                 libressl-dev \
@@ -28,6 +28,7 @@ RUN BUILD_DEPS="build-base \
                 tini \
                 su-exec \
                 perl-net-ssleay \
+                postgresql-libs \
     && echo | cpan \
     && cpan install Carton \
     && git clone https://git.framasoft.org/luc/lstu.git /usr/lstu \
