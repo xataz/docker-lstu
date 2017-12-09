@@ -20,7 +20,9 @@ RUN BUILD_DEPS="build-base \
                 perl-dev \
                 libidn-dev \
                 wget \
-                postgresql-dev" \
+                postgresql-dev \
+                libpng-dev \
+                mariadb-dev" \
     && apk add -U ${BUILD_DEPS} \
                 libressl \
                 perl \
@@ -29,6 +31,8 @@ RUN BUILD_DEPS="build-base \
                 su-exec \
                 perl-net-ssleay \
                 postgresql-libs \
+                mariadb-client-libs \
+                libpng \
     && echo | cpan \
     && cpan install Carton \
     && git clone https://git.framasoft.org/luc/lstu.git /usr/lstu \
