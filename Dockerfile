@@ -11,7 +11,7 @@ LABEL description="lstu based on alpine" \
       tags="latest" \
       maintainer="xataz <https://github.com/xataz>" \
       build_ver="2018020901" \
-      commit="2b5e5fc2aa50d0e14d976722151031a5243e3995"
+      commit="7efebff4bfa3722796a80a783fb332d6e50d41de"
 
 RUN BUILD_DEPS="build-base \
                 libressl-dev \
