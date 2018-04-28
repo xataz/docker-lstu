@@ -10,8 +10,8 @@ ENV GID=991 \
 LABEL description="lstu based on alpine" \
       tags="latest" \
       maintainer="xataz <https://github.com/xataz>" \
-      build_ver="201804250600" \
-      commit="c1d41128ec863b5eecd81cddf92f07c96477ab7b"
+      build_ver="201804280600" \
+      commit="3ba318eec637aca2730e53f69aeb3811f311ba74"
 
 RUN BUILD_DEPS="build-base \
                 libressl-dev \
