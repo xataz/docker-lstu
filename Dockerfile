@@ -1,4 +1,4 @@
-FROM xataz/alpine:3.7
+FROM alpine:3.8
 
 ENV GID=991 \
     UID=991 \
@@ -13,7 +13,8 @@ LABEL description="lstu based on alpine" \
       build_ver="201805160600" \
       commit="7a0e602af4410af68f24b75201f701f22208bb0d"
 
-RUN BUILD_DEPS="build-base \
+RUN apk add --update --no-cache --virtual .build-deps \
+                build-base \
                 libressl-dev \
                 ca-certificates \
                 git \
@@ -23,8 +24,8 @@ RUN BUILD_DEPS="build-base \
                 wget \
                 postgresql-dev \
                 libpng-dev \
-                mariadb-dev" \
-    && apk add -U ${BUILD_DEPS} \
+                mariadb-dev \
+    && apk add --update --no-cache \
                 libressl \
                 perl \
                 libidn \
@@ -32,14 +33,14 @@ RUN BUILD_DEPS="build-base \
                 su-exec \
                 perl-net-ssleay \
                 postgresql-libs \
-                mariadb-client-libs \
+                mariadb-client \
                 libpng \
     && echo | cpan \
     && cpan install Carton \
     && git clone https://git.framasoft.org/luc/lstu.git /usr/lstu \
     && cd /usr/lstu \
     && carton install \
-    && apk del ${BUILD_DEPS} \
+    && apk del .build-deps \
     && rm -rf /var/cache/apk/* /root/.cpan* /usr/lstu/local/cache/* /usr/lstu/utilities
     
 EXPOSE 8282
