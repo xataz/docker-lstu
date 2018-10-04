@@ -1,4 +1,4 @@
-![](https://git.framasoft.org/uploads/project/avatar/5/lstu.png)
+![](https://framagit.org/luc/lstu/raw/master/themes/default/public/img/lstu128.png)
 
 [![Build Status](https://drone.xataz.net/api/badges/xataz/docker-lstu/status.svg)](https://drone.xataz.net/xataz/docker-lstu)
 [![](https://images.microbadger.com/badges/image/xataz/lstu.svg)](https://microbadger.com/images/xataz/lstu "Get your own image badge on microbadger.com")
@@ -8,10 +8,10 @@
 > If you don't trust, you can build yourself.
 
 ## Tag available
-* latest [(lstu/Dockerfile)](https://github.com/xataz/dockerfiles/blob/master/lstu/Dockerfile)
+* latest [(lstu/Dockerfile)](https://github.com/xataz/docker-lstu/blob/master/Dockerfile)
 
 ## Description
-What is [lstu](https://git.framasoft.org/luc/lstu) ?
+What is [lstu](https://framagit.org/luc/lstu) ?
 
 It means Let's Shorten That Url.
 
@@ -20,7 +20,7 @@ It means Let's Shorten That Url.
 ## BUILD IMAGE
 
 ```shell
-docker build -t xataz/lstu github.com/xataz/dockerfiles.git#master:lstu
+docker build -t xataz/lstu github.com/xataz/docker-lstu.git#master
 ```
 
 ## Configuration
