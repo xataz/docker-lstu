@@ -1,5 +1,7 @@
 FROM alpine:3.8
 
+ARG LSTU_VERSION=0.20-1
+
 ENV GID=991 \
     UID=991 \
     SECRET=f6056062888a9a6aff1cc89dd3397853 \
@@ -37,7 +39,7 @@ RUN apk add --update --no-cache --virtual .build-deps \
                 libpng \
     && echo | cpan \
     && cpan install Carton \
-    && git clone https://git.framasoft.org/luc/lstu.git /usr/lstu \
+    && git clone -b ${LSTU_VERSION} https://framagit.org/luc/lstu.git /usr/lstu \
     && cd /usr/lstu \
     && carton install \
     && apk del .build-deps \
