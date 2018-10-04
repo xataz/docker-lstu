@@ -43,8 +43,10 @@ RUN apk add --update --no-cache --virtual .build-deps \
     && cd /usr/lstu \
     && carton install \
     && apk del .build-deps \
-    && rm -rf /var/cache/apk/* /root/.cpan* /usr/lstu/local/cache/* /usr/lstu/utilities
-    
+    && rm -rf /var/cache/apk/* /root/.cpan* /usr/lstu/local/cache/*
+
+VOLUME /usr/lstu/data
+
 EXPOSE 8282
 
 COPY startup /usr/local/bin/startup
