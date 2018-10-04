@@ -35,6 +35,7 @@ docker build -t xataz/lstu github.com/xataz/docker-lstu.git#master
 Tip : you can use the following command to generate SECRET. `date +%s | md5sum | head -c 32`
 
 ### Volumes
+* /usr/lstu/lstu.conf : lstu's configuration file is here
 * /usr/lstu/data/ : lstu's database is here
 
 ### Ports
