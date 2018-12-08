@@ -1,6 +1,6 @@
 FROM alpine:3.8
 
-ARG LSTU_VERSION=0.23-1
+ARG LSTU_VERSION=0.21-3
 
 ENV GID=991 \
     UID=991 \
@@ -10,7 +10,7 @@ ENV GID=991 \
     ADMINPWD="s3cr3T"
 
 LABEL description="lstu based on alpine" \
-      tags="latest 0.23-1 0.23" \
+      tags="latest 0.21-3 0.21" \
       maintainer="xataz <https://github.com/xataz>" \
       build_ver="201812081230" 
 
