@@ -1,6 +1,6 @@
 FROM alpine:3.8
 
-ARG LSTU_VERSION=0.20-1
+ARG LSTU_VERSION=0.23-1
 
 ENV GID=991 \
     UID=991 \
@@ -10,10 +10,9 @@ ENV GID=991 \
     ADMINPWD="s3cr3T"
 
 LABEL description="lstu based on alpine" \
-      tags="latest" \
+      tags="latest 0.23-1 0.23" \
       maintainer="xataz <https://github.com/xataz>" \
-      build_ver="201805160600" \
-      commit="7a0e602af4410af68f24b75201f701f22208bb0d"
+      build_ver="201812081230" 
 
 RUN apk add --update --no-cache --virtual .build-deps \
                 build-base \
@@ -42,7 +41,7 @@ RUN apk add --update --no-cache --virtual .build-deps \
     && git clone -b ${LSTU_VERSION} https://framagit.org/luc/lstu.git /usr/lstu \
     && cd /usr/lstu \
     && carton install \
-    && apk del .build-deps \
+    && apk del --no-cache .build-deps \
     && rm -rf /var/cache/apk/* /root/.cpan* /usr/lstu/local/cache/* \
     && rm /usr/lstu/local/lib/perl5/x86_64-linux-thread-multi/auto/DBD/mysql/mysql.so
 # This last one is a very weird fix for the following error:
