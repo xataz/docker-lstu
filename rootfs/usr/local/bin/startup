@@ -1,0 +1,24 @@
+#!/bin/sh
+
+addgroup -g ${GID} lstu && adduser -H -s /bin/sh -D -G lstu -u ${UID} lstu
+
+
+mkdir -p  /usr/lstu/data
+chown -R lstu:lstu  /usr/lstu /etc/s6.d/* /etc/s6.d/.*
+find /etc/s6.d -type f -exec chmod u+x {} \;
+
+# Outputting directly to lstu.conf using "sed -i" when mounted with docker fails.
+echo "$(sed \
+        -e 's|<secret>|'${SECRET}'|' \
+        -e 's|<contact>|'${CONTACT}'|' \
+        -e 's|<adminpwd>|'${ADMINPWD}'|' \
+        -e 's|<webroot>|'${WEBROOT}'|' /usr/lstu/lstu.conf
+)" > /usr/lstu/lstu.conf
+
+
+## run s6
+if [ $# -gt 0 ]; then
+    exec su-exec ${UID}:${GID} "$@"
+else
+    exec su-exec ${UID}:${GID} /bin/s6-svscan /etc/s6.d
+fi

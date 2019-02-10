@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd /usr/lstu
+exec /usr/local/bin/carton exec hypnotoad -f /usr/lstu/script/lstu
