@@ -8,7 +8,7 @@
 > If you don't trust, you can build yourself.
 
 ## Tag available
-* latest, 0.21-3, 0.21 [(lstu/Dockerfile)](https://github.com/xataz/docker-lstu/blob/master/Dockerfile)
+* latest, 0.21-4, 0.21 [(lstu/Dockerfile)](https://github.com/xataz/docker-lstu/blob/master/Dockerfile)
 
 ## Description
 What is [lstu](https://framagit.org/luc/lstu) ?
